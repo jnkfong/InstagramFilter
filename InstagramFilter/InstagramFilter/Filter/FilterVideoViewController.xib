@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterVideoViewController" customModule="InstagramFilter" customModuleProvider="target">
+            <connections>
+                <outlet property="videoView" destination="mev-fc-UIJ" id="GhD-63-yQ4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-Uh-Eo4">
+                    <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items>
+                        <navigationItem id="v7G-M0-bMJ">
+                            <barButtonItem key="leftBarButtonItem" image="ic_close" id="78F-K2-ISc">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" image="ic_check" id="2jt-cr-ab0">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mev-fc-UIJ">
+                    <rect key="frame" x="0.0" y="64" width="414" height="414"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="mev-fc-UIJ" secondAttribute="height" multiplier="1:1" id="otn-da-Fgy"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edR-vv-wbq">
+                    <rect key="frame" x="0.0" y="478" width="414" height="258"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-MH-1FK">
+                            <rect key="frame" x="0.0" y="49" width="414" height="160"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="N4c-X5-WNB"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kTg-Wc-Pvi">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Kb8-MH-1FK" secondAttribute="trailing" id="XAl-LP-sg4"/>
+                        <constraint firstItem="Kb8-MH-1FK" firstAttribute="leading" secondItem="edR-vv-wbq" secondAttribute="leading" id="mWI-tJ-EcQ"/>
+                        <constraint firstItem="Kb8-MH-1FK" firstAttribute="centerY" secondItem="edR-vv-wbq" secondAttribute="centerY" id="v8x-R5-kYj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="edR-vv-wbq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0NT-1K-jdF"/>
+                <constraint firstItem="mev-fc-UIJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0mm-Te-0sH"/>
+                <constraint firstItem="mev-fc-UIJ" firstAttribute="top" secondItem="gtb-Uh-Eo4" secondAttribute="bottom" id="8hl-PY-oxL"/>
+                <constraint firstItem="gtb-Uh-Eo4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mfq-TB-n3z"/>
+                <constraint firstItem="gtb-Uh-Eo4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VxO-Zj-8vE"/>
+                <constraint firstItem="mev-fc-UIJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ftn-pJ-bld"/>
+                <constraint firstItem="edR-vv-wbq" firstAttribute="top" secondItem="mev-fc-UIJ" secondAttribute="bottom" id="hio-cr-deG"/>
+                <constraint firstItem="edR-vv-wbq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mu2-IX-2Wp"/>
+                <constraint firstItem="edR-vv-wbq" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ti3-0k-iWc"/>
+                <constraint firstItem="gtb-Uh-Eo4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vBh-Kh-pJB"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_check" width="48" height="48"/>
+        <image name="ic_close" width="48" height="48"/>
+    </resources>
+</document>
