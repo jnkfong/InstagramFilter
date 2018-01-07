@@ -52,7 +52,6 @@ class FiilterViewController: UIViewController {
         collectionView?.register(UINib.init(nibName: "FilterCollectionViewCell", bundle:nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
     }
     
-   
     @IBAction func imageViewDidSwipeLeft() {
         if filterIndex == filterNameList.count - 1 {
             filterIndex = 0
@@ -114,13 +113,11 @@ extension FiilterViewController: UICollectionViewDataSource, UICollectionViewDel
         if indexPath.row != 0 {
             filteredImage = createFilteredImage(filterName: filterNameList[indexPath.row], image: smallImage!)
         }
-        
         cell.imageView.image = filteredImage
         cell.filterNameLabel.text = filterDisplayNameList[indexPath.row]
         if let initalCharacter = filterDisplayNameList[indexPath.row].first {
              cell.initialLabel.text = "\(initalCharacter)"
         }
-       
         updateCellFont()
         return cell
     }

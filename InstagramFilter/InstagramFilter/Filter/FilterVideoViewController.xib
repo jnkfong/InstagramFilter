@@ -26,6 +26,9 @@
                 <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-Uh-Eo4">
                     <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                     <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </textAttributes>
                     <items>
                         <navigationItem id="v7G-M0-bMJ">
                             <barButtonItem key="leftBarButtonItem" image="ic_close" id="78F-K2-ISc">
@@ -54,10 +57,10 @@
                     <rect key="frame" x="0.0" y="478" width="414" height="258"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-MH-1FK">
-                            <rect key="frame" x="0.0" y="49" width="414" height="160"/>
+                            <rect key="frame" x="0.0" y="98" width="414" height="160"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="160" id="N4c-X5-WNB"/>
+                                <constraint firstAttribute="height" constant="160" id="pr1-Va-aQE"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kTg-Wc-Pvi">
                                 <size key="itemSize" width="50" height="50"/>
@@ -73,9 +76,9 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Kb8-MH-1FK" secondAttribute="trailing" id="XAl-LP-sg4"/>
-                        <constraint firstItem="Kb8-MH-1FK" firstAttribute="leading" secondItem="edR-vv-wbq" secondAttribute="leading" id="mWI-tJ-EcQ"/>
-                        <constraint firstItem="Kb8-MH-1FK" firstAttribute="centerY" secondItem="edR-vv-wbq" secondAttribute="centerY" id="v8x-R5-kYj"/>
+                        <constraint firstAttribute="trailing" secondItem="Kb8-MH-1FK" secondAttribute="trailing" id="bOb-1d-3AR"/>
+                        <constraint firstAttribute="bottom" secondItem="Kb8-MH-1FK" secondAttribute="bottom" id="nxK-2B-vYv"/>
+                        <constraint firstItem="Kb8-MH-1FK" firstAttribute="leading" secondItem="edR-vv-wbq" secondAttribute="leading" id="wfO-3S-1sk"/>
                     </constraints>
                 </view>
             </subviews>

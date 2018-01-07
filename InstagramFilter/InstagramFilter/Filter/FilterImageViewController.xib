@@ -48,15 +48,19 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="flF-Nt-f52" secondAttribute="height" multiplier="1:1" id="q4u-yU-cPK"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="6VW-bV-Y4U" appends="YES" id="gTv-Yu-Aif"/>
+                        <outletCollection property="gestureRecognizers" destination="YNp-NE-sMq" appends="YES" id="wOt-Mp-aTP"/>
+                    </connections>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qvk-Cb-4uf">
                     <rect key="frame" x="0.0" y="439" width="375" height="228"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9m8-H1-yhg">
-                            <rect key="frame" x="0.0" y="34" width="375" height="160"/>
+                            <rect key="frame" x="0.0" y="68" width="375" height="160"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="160" id="Jhj-Gl-jyn"/>
+                                <constraint firstAttribute="height" constant="160" id="VVM-1A-YyE"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="skU-Co-rW0">
                                 <size key="itemSize" width="120" height="160"/>
@@ -72,9 +76,9 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="9m8-H1-yhg" firstAttribute="centerY" secondItem="Qvk-Cb-4uf" secondAttribute="centerY" id="3lT-M5-fxg"/>
-                        <constraint firstItem="9m8-H1-yhg" firstAttribute="leading" secondItem="Qvk-Cb-4uf" secondAttribute="leading" id="77L-ut-yDV"/>
-                        <constraint firstAttribute="trailing" secondItem="9m8-H1-yhg" secondAttribute="trailing" id="7Rr-ni-H5B"/>
+                        <constraint firstAttribute="bottom" secondItem="9m8-H1-yhg" secondAttribute="bottom" id="Es9-Qf-5EF"/>
+                        <constraint firstItem="9m8-H1-yhg" firstAttribute="leading" secondItem="Qvk-Cb-4uf" secondAttribute="leading" id="KHm-gP-B3P"/>
+                        <constraint firstAttribute="trailing" secondItem="9m8-H1-yhg" secondAttribute="trailing" id="XiO-V3-rNy"/>
                     </constraints>
                 </view>
             </subviews>
@@ -94,6 +98,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>
+        <swipeGestureRecognizer direction="right" id="6VW-bV-Y4U">
+            <connections>
+                <action selector="imageViewDidSwipeRight" destination="-1" id="VFX-0o-0tY"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="YNp-NE-sMq">
+            <connections>
+                <action selector="imageViewDidSwipeLeft" destination="-1" id="BK5-uy-9MY"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
     <resources>
         <image name="ic_check" width="48" height="48"/>
