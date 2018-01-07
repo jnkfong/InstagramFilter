@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 
 public protocol FilterVideoViewControllerDelegate {
-    func filterVideoViewControllerVideoDidFilter(image: UIImage)
+    func filterVideoViewControllerVideoDidFilter(video: AVURLAsset)
     func filterVideoViewControllerDidCancel()
 }
 
@@ -29,11 +29,18 @@ class FilterVideoViewController: FiilterViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let video = self.video {
+            self.playVideo(video:video, filterName: self.filterNameList[0])
+
+        }
+       
     }
 
     public init(video: AVURLAsset) {
         super.init(nibName: nil, bundle: nil)
         self.video = video
+        self.image = video.videoToUIImage()
+        self.originalImage = self.image
         
     }
     
@@ -46,13 +53,13 @@ class FilterVideoViewController: FiilterViewController {
             self.view = view
             if let image = self.image {
                 imageView?.image = image
-                //smallImage = resizeImage(image: image)
+                smallImage = resizeImage(image: image)
             }
         }
     }
     
-    func playVideo(url:URL, filterName:String){
-        let avPlayerItem = AVPlayerItem(asset: AVURLAsset(url:url))
+    func playVideo(video:AVURLAsset, filterName:String){
+        let avPlayerItem = AVPlayerItem(asset: video)
         if(filterIndex != 0){
             avVideoComposition = AVVideoComposition(asset: self.video!, applyingCIFiltersWithHandler: { request in
                 let source = request.sourceImage.clampedToExtent()
@@ -82,10 +89,11 @@ class FilterVideoViewController: FiilterViewController {
     override func applyFilter() {
         let filterName = filterNameList[filterIndex]
         if let image = self.image {
-            //self.postAsset.filteredImage = createFilteredImage(filterName: filterName, image: image)
+            self.originalImage = createFilteredImage(filterName: filterName, image: image)
         }
-        self.playVideo(url: (self.video?.url)!, filterName:filterNameList[filterIndex])
-        
+        if let video = self.video {
+            self.playVideo(video:video, filterName:filterNameList[filterIndex])
+        }
     }
     
     override func createFilteredImage(filterName: String, image: UIImage) -> UIImage {
@@ -119,9 +127,12 @@ class FilterVideoViewController: FiilterViewController {
     }
     
     @IBAction func doneButtontapped() {
-        if let delegate = self.delegate {
-            delegate.filterVideoViewControllerVideoDidFilter(image: (imageView?.image)!)
-        }
+        video?.exportFilterVideo(videoComposition: avVideoComposition , completion: { (url) in
+            if let delegate = self.delegate {
+                let convertedVideo = AVURLAsset(url: url as URL!)
+                delegate.filterVideoViewControllerVideoDidFilter(video: convertedVideo)
+            }
+        })
         dismiss(animated: true, completion: nil)
     }
 }

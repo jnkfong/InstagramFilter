@@ -51,10 +51,15 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         else {
             if let nsURL = info[UIImagePickerControllerMediaURL] as? NSURL {
-                let video = AVURLAsset(url: nsURL.absoluteURL!)
-                let videoViewController = FilterVideoViewController(video:video)
-                videoViewController.delegate = self
-                self.present(videoViewController, animated: false, completion: nil)
+                AVAsset.squareCropVideo(inputURL: nsURL, completion: { (sqVideoURL) in
+                    let video = AVURLAsset(url: sqVideoURL as URL!)
+                    let videoViewController = FilterVideoViewController(video:video)
+                    videoViewController.delegate = self
+                    DispatchQueue.main.async {
+                        self.present(videoViewController, animated: false, completion: nil)
+                    }
+                    
+                })
             }
             
         }
@@ -62,7 +67,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 }
 
 extension ViewController: FilterImageViewControllerDelegate, FilterVideoViewControllerDelegate {
-    func filterVideoViewControllerVideoDidFilter(image: UIImage) {
+    func filterVideoViewControllerVideoDidFilter(video: AVURLAsset) {
     }
     
     func filterImageViewControllerImageDidFilter(image: UIImage) {

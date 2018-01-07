@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD46F35220023FDF00FFBB39 /* EditVideoUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46F35120023FDF00FFBB39 /* EditVideoUtility.swift */; };
 		FDFAB8251FFF6C39009C7B35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAB8241FFF6C39009C7B35 /* AppDelegate.swift */; };
 		FDFAB8271FFF6C39009C7B35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAB8261FFF6C39009C7B35 /* ViewController.swift */; };
 		FDFAB82A1FFF6C39009C7B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFAB8281FFF6C39009C7B35 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD46F35120023FDF00FFBB39 /* EditVideoUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideoUtility.swift; sourceTree = "<group>"; };
 		FDFAB8211FFF6C39009C7B35 /* InstagramFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFAB8241FFF6C39009C7B35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDFAB8261FFF6C39009C7B35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				FDFAB8421FFF7066009C7B35 /* FilterImageViewController.xib */,
 				FDFAB8451FFF707A009C7B35 /* FilterVideoViewController.swift */,
 				FDFAB8461FFF707A009C7B35 /* FilterVideoViewController.xib */,
+				FD46F35120023FDF00FFBB39 /* EditVideoUtility.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				FDFAB8471FFF707A009C7B35 /* FilterVideoViewController.swift in Sources */,
 				FDFAB8401FFF704F009C7B35 /* FiilterViewController.swift in Sources */,
+				FD46F35220023FDF00FFBB39 /* EditVideoUtility.swift in Sources */,
 				FDFAB8431FFF7066009C7B35 /* FilterImageViewController.swift in Sources */,
 				FDFAB8271FFF6C39009C7B35 /* ViewController.swift in Sources */,
 				FDFAB83D1FFF6EE9009C7B35 /* FilterCollectionViewCell.swift in Sources */,
