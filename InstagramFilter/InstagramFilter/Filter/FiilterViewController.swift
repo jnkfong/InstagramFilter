@@ -117,6 +117,10 @@ extension FiilterViewController: UICollectionViewDataSource, UICollectionViewDel
         
         cell.imageView.image = filteredImage
         cell.filterNameLabel.text = filterDisplayNameList[indexPath.row]
+        if let initalCharacter = filterDisplayNameList[indexPath.row].first {
+             cell.initialLabel.text = "\(initalCharacter)"
+        }
+       
         updateCellFont()
         return cell
     }
@@ -148,12 +152,7 @@ extension FiilterViewController: UICollectionViewDataSource, UICollectionViewDel
                 // update nonselected cell font
                 if let unselectedCell = collectionView?.cellForItem(at: IndexPath(row: i, section: 0)) {
                     let cell = unselectedCell as! FilterCollectionViewCell
-                    if #available(iOS 8.2, *) {
-                        cell.filterNameLabel.font = UIFont.systemFont(ofSize: 14.0, weight:UIFont.Weight.thin)
-                    } else {
-                        // Fallback on earlier versions
-                        cell.filterNameLabel.font = UIFont.systemFont(ofSize: 14.0)
-                    }
+                    cell.filterNameLabel.font = UIFont.systemFont(ofSize: 14.0, weight:UIFont.Weight.thin)
                 }
             }
         }

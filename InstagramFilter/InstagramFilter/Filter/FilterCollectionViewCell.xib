@@ -21,33 +21,45 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pil-Qr-Irp">
-                        <rect key="frame" x="0.0" y="40" width="120" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="pil-Qr-Irp" secondAttribute="height" multiplier="1:1" id="diT-GO-T1a"/>
+                            <constraint firstAttribute="width" secondItem="pil-Qr-Irp" secondAttribute="height" multiplier="1:1" id="4RM-dI-JXg"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNC-Cf-PVw">
+                        <rect key="frame" x="47.5" y="30" width="26" height="60"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-oa-yXC">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="0.0" y="120" width="120" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Hld-dn-6Dw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="pil-Qr-Irp" secondAttribute="bottom" id="GFc-Mo-Zle"/>
-                <constraint firstItem="fTF-oa-yXC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="K4T-SM-vdM"/>
-                <constraint firstItem="fTF-oa-yXC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eR2-5s-hEv"/>
-                <constraint firstAttribute="trailing" secondItem="fTF-oa-yXC" secondAttribute="trailing" id="ge3-Qg-Irs"/>
-                <constraint firstAttribute="trailing" secondItem="pil-Qr-Irp" secondAttribute="trailing" id="pMv-td-fOR"/>
-                <constraint firstItem="pil-Qr-Irp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="plT-5Z-JFg"/>
-                <constraint firstItem="pil-Qr-Irp" firstAttribute="top" secondItem="fTF-oa-yXC" secondAttribute="bottom" id="vgF-71-DoZ"/>
+                <constraint firstAttribute="trailing" secondItem="fTF-oa-yXC" secondAttribute="trailing" id="1oL-N7-9YU"/>
+                <constraint firstItem="pil-Qr-Irp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ak3-pf-gl6"/>
+                <constraint firstAttribute="trailing" secondItem="pil-Qr-Irp" secondAttribute="trailing" id="Ehb-2N-rjw"/>
+                <constraint firstItem="pil-Qr-Irp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LGv-um-3f5"/>
+                <constraint firstAttribute="bottom" secondItem="fTF-oa-yXC" secondAttribute="bottom" id="M6n-LU-0i5"/>
+                <constraint firstItem="tNC-Cf-PVw" firstAttribute="centerX" secondItem="pil-Qr-Irp" secondAttribute="centerX" id="MuT-V3-Bhg"/>
+                <constraint firstItem="tNC-Cf-PVw" firstAttribute="centerY" secondItem="pil-Qr-Irp" secondAttribute="centerY" id="Yfd-iW-zB0"/>
+                <constraint firstItem="fTF-oa-yXC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gel-De-vrx"/>
+                <constraint firstItem="fTF-oa-yXC" firstAttribute="top" secondItem="pil-Qr-Irp" secondAttribute="bottom" id="lVe-mf-PBK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="120" height="160"/>
             <connections>
                 <outlet property="filterNameLabel" destination="fTF-oa-yXC" id="EVI-rJ-FFb"/>
                 <outlet property="imageView" destination="pil-Qr-Irp" id="xcs-IV-v6I"/>
+                <outlet property="initialLabel" destination="tNC-Cf-PVw" id="Fek-P7-DLw"/>
             </connections>
             <point key="canvasLocation" x="60" y="97"/>
         </collectionViewCell>
