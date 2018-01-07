@@ -1,5 +1,7 @@
 # Instagram Filter
-Image and video instagram filter 
+Image and video instagram filter
+
+<img src="https://github.com/jnkfong/InstagramFilter/blob/master/img/a.jpg" width="20%"> <img src="https://github.com/jnkfong/InstagramFilter/blob/master/img/b.jpg" width="20%"> <img src="https://github.com/jnkfong/InstagramFilter/blob/master/img/c.jpg" width="20%"> <img src="https://github.com/jnkfong/InstagramFilter/blob/master/img/d.jpg" width="20%">
 
 ## Description
 Instagram filter is a practice project to simulate the instagram filter for both videos and images using the inspired [Sharaku](https://github.com/makomori/Sharaku) project and self research on video editing. Feel free to contact me for any additional modifications. There is currently no pod for this project but you can copy the five files under the Filter folder to add into your own project. Any video changes can be modified in the EditVideoUtility swift class.
