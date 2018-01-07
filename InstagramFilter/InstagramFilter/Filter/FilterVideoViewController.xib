@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterVideoViewController" customModule="InstagramFilter" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="Kb8-MH-1FK" id="IBW-IY-TvT"/>
                 <outlet property="videoView" destination="mev-fc-UIJ" id="GhD-63-yQ4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,9 +30,15 @@
                         <navigationItem id="v7G-M0-bMJ">
                             <barButtonItem key="leftBarButtonItem" image="ic_close" id="78F-K2-ISc">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="closeButtonTapped" destination="-1" id="q7d-Im-dbg"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" image="ic_check" id="2jt-cr-ab0">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="doneButtontapped" destination="-1" id="bhD-CK-qIh"/>
+                                </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>
@@ -58,6 +65,10 @@
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="kaz-w4-HGa"/>
+                                <outlet property="delegate" destination="-1" id="Lbb-mb-JeQ"/>
+                            </connections>
                         </collectionView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

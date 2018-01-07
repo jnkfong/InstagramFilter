@@ -48,9 +48,8 @@ class FiilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "FilterCollectionViewCell", bundle: Bundle(for: self.classForCoder))
-        collectionView?.register(nib, forCellWithReuseIdentifier: "cell")
-
+        collectionView?.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: "FilterCollectionViewCell")
+        collectionView?.register(UINib.init(nibName: "FilterCollectionViewCell", bundle:nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
     }
     
    

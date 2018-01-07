@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 
 public protocol FilterVideoViewControllerDelegate {
-    func filterVideoViewControllerImageDidFilter(image: UIImage)
+    func filterVideoViewControllerVideoDidFilter(image: UIImage)
     func filterVideoViewControllerDidCancel()
 }
 
@@ -111,4 +111,17 @@ class FilterVideoViewController: FiilterViewController {
         return filteredImage
     }
    
+    @IBAction func closeButtonTapped() {
+        if let delegate = self.delegate {
+            delegate.filterVideoViewControllerDidCancel()
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButtontapped() {
+        if let delegate = self.delegate {
+            delegate.filterVideoViewControllerVideoDidFilter(image: (imageView?.image)!)
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

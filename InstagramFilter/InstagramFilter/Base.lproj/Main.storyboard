@@ -18,18 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-7H-Cy5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-7H-Cy5">
                                 <rect key="frame" x="16" y="20" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bxS-yS-52G"/>
+                                </constraints>
+                                <state key="normal" title="Import From Gallery"/>
+                                <connections>
+                                    <action selector="importFromGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ccL-Qp-xzd"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yob-Jb-kWy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yob-Jb-kWy">
                                 <rect key="frame" x="16" y="58" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="prR-tX-sQx"/>
+                                </constraints>
+                                <state key="normal" title="Capture From Camera"/>
+                                <connections>
+                                    <action selector="importFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wSb-12-etL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d7L-7H-Cy5" secondAttribute="trailing" constant="16" id="0pz-kg-Y5n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yob-Jb-kWy" secondAttribute="trailing" constant="16" id="O9S-OT-2aI"/>
+                            <constraint firstItem="yob-Jb-kWy" firstAttribute="top" secondItem="d7L-7H-Cy5" secondAttribute="bottom" constant="8" id="UHq-ld-exg"/>
+                            <constraint firstItem="yob-Jb-kWy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Uef-pH-hEz"/>
+                            <constraint firstItem="d7L-7H-Cy5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XDg-x7-oIv"/>
+                            <constraint firstItem="d7L-7H-Cy5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vlW-hu-PwI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

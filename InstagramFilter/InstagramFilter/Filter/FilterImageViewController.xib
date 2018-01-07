@@ -13,6 +13,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterImageViewController" customModule="InstagramFilter" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="9m8-H1-yhg" id="q6b-J8-fzT"/>
+                <outlet property="imageView" destination="flF-Nt-f52" id="Trx-lY-Ig8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,9 +30,15 @@
                         <navigationItem id="nOH-ha-ya5">
                             <barButtonItem key="leftBarButtonItem" image="ic_close" id="nmp-tj-5PP">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="closeButtonTapped" destination="-1" id="lKt-dL-shj"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" image="ic_check" id="And-XL-HXJ">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="doneButtontapped" destination="-1" id="987-DR-3jn"/>
+                                </connections>
                             </barButtonItem>
                         </navigationItem>
                     </items>
@@ -46,16 +54,20 @@
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9m8-H1-yhg">
                             <rect key="frame" x="0.0" y="34" width="375" height="160"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="160" id="Jhj-Gl-jyn"/>
                             </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="skU-Co-rW0">
-                                <size key="itemSize" width="50" height="50"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="skU-Co-rW0">
+                                <size key="itemSize" width="120" height="160"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="bZf-9w-dAl"/>
+                                <outlet property="delegate" destination="-1" id="U5d-oB-paR"/>
+                            </connections>
                         </collectionView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

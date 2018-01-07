@@ -22,7 +22,6 @@ class FilterImageViewController: FiilterViewController {
 
         // Do any additional setup after loading the view.
     }
-    
     public init(image: UIImage) {
         super.init(nibName: nil, bundle: nil)
         self.image = image
@@ -32,12 +31,13 @@ class FilterImageViewController: FiilterViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override open func loadView() {
         if let view = UINib(nibName: "FilterImageViewController", bundle: Bundle(for: self.classForCoder)).instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
             if let image = self.image {
                 imageView?.image = image
-                //smallImage = resizeImage(image: image)
+                smallImage = resizeImage(image: image)
             }
         }
     }
@@ -60,5 +60,19 @@ class FilterImageViewController: FiilterViewController {
         let filteredImage = UIImage(cgImage: outputCGImage!, scale: image.scale, orientation: image.imageOrientation)
         
         return filteredImage
+    }
+    
+    @IBAction func closeButtonTapped() {
+        if let delegate = self.delegate {
+            delegate.filterImageViewControllerDidCancel()
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButtontapped() {
+        if let delegate = self.delegate {
+            delegate.filterImageViewControllerImageDidFilter(image: (imageView?.image)!)
+        }
+       dismiss(animated: true, completion: nil)
     }
 }
